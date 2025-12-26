@@ -1,0 +1,43 @@
+$ echo "Sample data content" > ~/sample_data.txt
+
+$ ln ~/sample_data.txt ~/sample_hard.txt
+
+$ ln -s ~/sample_data.txt ~/sample_soft.txt
+
+$ ls -i ~/sample_data.txt ~/sample_hard.txt ~/sample_soft.txt
+1234567 sample_data.txt
+1234567 sample_hard.txt
+1234568 sample_soft.txt
+
+$ ls -li ~/sample_data.txt ~/sample_hard.txt ~/sample_soft.txt
+1234567 -rw-r--r-- 2 chirag chirag    20 Dec 26 13:40 sample_data.txt
+1234567 -rw-r--r-- 2 chirag chirag    20 Dec 26 13:40 sample_hard.txt
+1234568 lrwxrwxrwx 1 chirag chirag    17 Dec 26 13:41 sample_soft.txt -> /home/chirag/sample_data.txt
+
+$ ls -l ~/sample_data.txt
+-rw-r--r-- 2 chirag chirag 20 Dec 26 13:40 sample_data.txt
+
+$ du -sh ~
+1.2G    /home/chirag
+
+$ ls -lh ~
+total 32K
+-rw-r--r-- 2 chirag chirag   20 Dec 26 13:40 sample_data.txt
+-rw-r--r-- 2 chirag chirag   20 Dec 26 13:40 sample_hard.txt
+lrwxrwxrwx 1 chirag chirag   17 Dec 26 13:41 sample_soft.txt -> /home/chirag/sample_data.txt
+
+$ rm ~/sample_soft.txt
+
+$ ls ~/sample_data.txt
+/home/chirag/sample_data.txt
+
+$ du -h ~ | head
+4.0K    /home/chirag/.bashrc
+4.0K    /home/chirag/.profile
+8.0K    /home/chirag/sample_data.txt
+1.2G    /home/chirag
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        50G   18G   30G  38% /
+tmpfs           1.6G     0  1.6G   0% /dev/shm
