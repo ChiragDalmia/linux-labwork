@@ -1,0 +1,51 @@
+uptime
+-->
+Displays the time elapsed since the system was last booted.
+
+ps -u chirag
+-->
+Lists all processes currently running under my user account.
+
+top
+-->
+Displays real-time CPU usage and active processes, allowing identification of the highest CPU-consuming process.
+
+sleep 300 &
+-->
+Starts a command in the background.
+
+jobs
+-->
+Displays background jobs to verify that the process is running.
+
+ps -o pid,ni,comm -u chirag
+-->
+Displays process IDs, niceness values, and command names of my running processes.
+
+renice -n 10 -p <PID>
+-->
+Changes the priority (niceness) of the specified running process.
+
+ps -o pid,ni,comm -u chirag
+-->
+Confirms that the process priority has been updated.
+
+free -h
+-->
+Displays system memory usage in a human-readable format.
+
+df -h ~
+-->
+Displays disk space usage of the filesystem containing my home directory.
+
+echo $SHELL
+-->
+Displays the name of the shell currently in use.
+
+uname -a > system_report.txt
+-->
+Redirects system information output into a file named system_report.txt.
+
+ncdu ~
+-->
+Launches an interactive disk usage analyzer showing directory sizes within the home directory.
