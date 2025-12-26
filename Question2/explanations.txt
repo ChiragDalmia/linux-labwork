@@ -1,0 +1,41 @@
+mkdir ~/documents_lab
+-->
+Creates a directory named documents_lab inside the home directory.
+
+cd ~/documents_lab
+touch plan.txt
+-->
+Navigates into the directory and creates an empty file named plan.txt.
+
+echo "Project planning notes" > plan.txt
+-->
+Writes sample project-related text into the plan.txt file.
+
+ls -l plan.txt
+-->
+Displays file permissions, ownership, and size information.
+
+cp plan.txt plan_copy.txt
+-->
+Creates a duplicate of the plan.txt file named plan_copy.txt.
+
+cd ~
+mv documents_lab project_documents
+-->
+Renames the documents_lab directory to project_documents.
+
+mkdir ~/project_documents/archive
+-->
+Creates a subdirectory named archive inside project_documents.
+
+mv ~/project_documents/plan_copy.txt ~/project_documents/archive/
+-->
+Moves the copied file into the archive directory.
+
+ls -R ~/project_documents
+-->
+Displays all files and directories inside project_documents recursively.
+
+pwd -W
+-->
+Displays the absolute path of the current working directory in Windows-style format.
