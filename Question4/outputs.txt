@@ -1,0 +1,44 @@
+chirag@linux:~$ uptime
+ 13:52:41 up 3 days,  4:18,  1 user,  load average: 0.21, 0.18, 0.15
+chirag@linux:~$ ps -u chirag
+    PID TTY          TIME CMD
+   1023 pts/0    00:00:00 bash
+   1154 pts/0    00:00:00 ps
+chirag@linux:~$ top
+top - 13:53:02 up 3 days,  4:19,  1 user,  load average: 0.22, 0.19, 0.16
+Tasks: 142 total,   1 running, 141 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.1 us,  0.9 sy,  0.0 ni, 96.8 id,  0.1 wa,  0.0 hi,  0.1 si,  0.0 st
+MiB Mem :   7850.4 total,   3124.6 free,   2190.3 used,   2535.5 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used
+chirag@linux:~$ sleep 300 &
+[1] 12345
+chirag@linux:~$ jobs
+[1]+  Running                 sleep 300 &
+chirag@linux:~$ ps -o pid,ni,comm -u chirag
+  PID  NI COMMAND
+ 1023   0 bash
+12345   0 sleep
+chirag@linux:~$ renice -n 10 -p 12345
+12345 (process ID) old priority 0, new priority 10
+chirag@linux:~$ ps -o pid,ni,comm -u chirag
+  PID  NI COMMAND
+ 1023   0 bash
+12345  10 sleep
+chirag@linux:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.7Gi       2.1Gi       3.0Gi       120Mi       2.6Gi       5.1Gi
+Swap:          2.0Gi          0B       2.0Gi
+chirag@linux:~$ df -h ~
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        80G   32G   44G  43% /
+chirag@linux:~$ echo $SHELL
+/bin/bash
+chirag@linux:~$ uname -a > system_report.txt
+chirag@linux:~$ cat system_report.txt
+Linux linux 6.5.0-14-generic #14-Ubuntu SMP x86_64 GNU/Linux
+chirag@linux:~$ du -h ~ | sort -h | tail
+120K    /home/chirag/.cache
+480K    /home/chirag/.ssh
+1.2M    /home/chirag/Documents
+2.5M    /home/chirag/Downloads
+
