@@ -1,0 +1,43 @@
+whoami
+groups
+-->
+Displays my current login username and the groups my account belongs to, confirming my user identity.
+
+pwd
+ls -l
+-->
+This shows my current working directory and lists all files and directories with detailed information.
+
+echo "Linux user environment verified" > user_info.txt
+-->
+Creates a file named user_info.txt and writes the verification message into it.
+
+wc -c user_info.txt
+-->
+Displays the total number of characters present in the user_info.txt file.
+
+mkdir --help
+-->
+Displays help information for the mkdir command. The -p option allows creating parent directories automatically if they do not exist.
+
+ls ~ | sort
+-->
+Lists the contents of the home directory in alphabetical order.
+
+echo "admin logged in" > log.txt
+grep "admin" log.txt
+-->
+Searches for the word "admin" in the log.txt file and displays only the matching lines.
+
+uname -r
+-->
+Displays the version of the Linux kernel currently running.
+
+ping -n 4 www.google.com
+-->
+Sends ICMP packets to verify that the system has network connectivity.
+
+net stats workstation
+-->
+Displays system statistics including the time since the system last started,
+which is equivalent to the uptime command on Linux.
