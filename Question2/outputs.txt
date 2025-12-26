@@ -1,0 +1,44 @@
+
+chira@Chirag MINGW64 ~/OneDrive/Desktop/linux-labwork/Question2 (main)     
+$ mkdir ~/documents_lab
+
+chira@Chirag MINGW64 ~/OneDrive/Desktop/linux-labwork/Question2 (main)     
+$ cd ~/documents_lab
+
+chira@Chirag MINGW64 ~/documents_lab
+$ touch plan.txt
+
+chira@Chirag MINGW64 ~/documents_lab
+$ echo "Project planning notes" > plan.txt
+
+chira@Chirag MINGW64 ~/documents_lab
+$ 
+ls -l plan.txt
+-rw-r--r-- 1 chira 197609 23 Dec 26 13:50 plan.txt
+
+chira@Chirag MINGW64 ~/documents_lab
+$ cp plan.txt plan_copy.txt
+
+chira@Chirag MINGW64 ~/documents_lab
+$ cd ~
+
+chira@Chirag MINGW64 ~
+$ mv documents_lab project_documents
+
+chira@Chirag MINGW64 ~
+$ mkdir ~/project_documents/archive
+
+chira@Chirag MINGW64 ~
+$ mv ~/project_documents/plan_copy.txt ~/project_documents/archive/
+
+chira@Chirag MINGW64 ~
+$ ls -R ~/project_documents
+/c/Users/chira/project_documents:
+archive/  plan.txt
+
+/c/Users/chira/project_documents/archive:
+plan_copy.txt
+
+chira@Chirag MINGW64 ~
+$ pwd -W
+C:/Users/chira
